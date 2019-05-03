@@ -2,33 +2,30 @@ package tech.visuallatam.myapplication.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_fake_bar.view.*
+import tech.visuallatam.myapplication.R
 import java.lang.RuntimeException
 
 val ARG_ACTION_1: String = "action_1"
 val ARG_ACTION_2: String = "action_2"
-val ARG_ACTION_3: String = "action_3"
 
 class FakeBarFragment : Fragment() {
 
     var listener: OnSelectOption? = null
     var action1: String? = null
     var action2: String? = null
-    var action3: String? = null
 
 
     companion object {
 
-        fun newInstace(action1: String, action2: String,action3: String) =
+        fun newInstace(action1: String, action2: String) =
                 FakeBarFragment().apply {
                     arguments  = Bundle().apply {
                         putString(ARG_ACTION_1,action1)
                         putString(ARG_ACTION_2,action2)
-                        putString(ARG_ACTION_3,action3)
 
                     }
                 }
@@ -43,7 +40,7 @@ class FakeBarFragment : Fragment() {
         if (context is OnSelectOption) {
             listener = context
         } else {
-            throw RuntimeException("Se necesita una implementación de  OnSelectOption")
+            throw RuntimeException("La regue man")
         }
     }
 
@@ -52,7 +49,6 @@ class FakeBarFragment : Fragment() {
         arguments?.apply {
             action1 = getString(ARG_ACTION_1)
             action2 = getString(ARG_ACTION_2)
-            action3 = getString(ARG_ACTION_3)
         }
     }
 
@@ -75,14 +71,7 @@ class FakeBarFragment : Fragment() {
                         listener?.onAction(2)
                     }
                 }
-
-                bt_action3.apply {
-                    text = action3
-                    setOnClickListener {
-                        listener?.onAction(3)
-                    }
-                }
-            }
+            }!!
 
 
     override fun onDetach() {

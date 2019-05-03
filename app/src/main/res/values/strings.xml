@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="flechita_derecha"><![CDATA[->]]></string>
+    <string name="flechita_izquierda"><![CDATA[<-]]></string>
+    <string name="YouTuber">WillyRex</string>
+    <string name="maspoweon">+</string>
+    <string name="menospoweon">-</string>
 </resources>

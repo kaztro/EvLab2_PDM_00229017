@@ -1,7 +1,8 @@
-package tech.visuallatam.myapplication
+package tech.visuallatam.myapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import tech.visuallatam.myapplication.R
 import tech.visuallatam.myapplication.fragments.ContentFragment
 import tech.visuallatam.myapplication.fragments.FakeBarFragment
 
@@ -15,11 +16,8 @@ class MainActivity : AppCompatActivity(), FakeBarFragment.OnSelectOption {
             2 -> {
                 "Wiii"
             }
-            3 -> {
-                "Bye"
-            }
             else -> {
-                "Fuck!"
+                "lolito"
             }
         }
 
@@ -34,9 +32,8 @@ class MainActivity : AppCompatActivity(), FakeBarFragment.OnSelectOption {
         setContentView(R.layout.activity_main)
 
         var barFragment = FakeBarFragment.newInstace(
-                "Op1",
-                "Op2",
-                "Op3"
+                "<------",
+                "------>"
         )
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -45,19 +42,4 @@ class MainActivity : AppCompatActivity(), FakeBarFragment.OnSelectOption {
                     .commit()
         }
     }
-}
-
-/*
-imagen.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    imagen.setImageResource(R.drawable.correo2);
-                }else if(event.getAction() == MotionEvent.ACTION_UP){
-                    imagen.setImageResource(R.drawable.imagen_actual);
-                }
-                return true;
-            }
-        });
-*/
 }
