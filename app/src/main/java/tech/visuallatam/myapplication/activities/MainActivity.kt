@@ -5,7 +5,7 @@ import android.os.Bundle
 import tech.visuallatam.myapplication.R
 import tech.visuallatam.myapplication.fragments.ContentFragment
 import tech.visuallatam.myapplication.fragments.FakeBarFragment
-
+//MIRA ESA BONITA ESTRUCTURA DE CARPETAS ewe
 class MainActivity : AppCompatActivity(), FakeBarFragment.OnSelectOption {
 
     override fun onAction(id: Int) {
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), FakeBarFragment.OnSelectOption {
         }
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_content, ContentFragment.newInstance(content))
+                .replace(R.id.fragment_content, ContentFragment.newInstance(content)) //AQUI ESTA EL NEWINSTANCE
                 .addToBackStack("Co")
                 .commit()
     }
